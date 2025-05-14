@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性管理 - 中旅内购商城</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 左侧导航栏 -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="sidebar-header mb-4">
+                        <h5 class="text-center text-white">中旅内购商城</h5>
+                        <h6 class="text-center text-white-50">后台管理系统</h6>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="bi bi-speedometer2 me-2"></i>
+                                控制台
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="category.html">
+                                <i class="bi bi-grid me-2"></i>
+                                类目管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="attribute.html">
+                                <i class="bi bi-tag me-2"></i>
+                                属性管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="product.html">
+                                <i class="bi bi-box-seam me-2"></i>
+                                商品管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order.html">
+                                <i class="bi bi-receipt me-2"></i>
+                                订单管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user.html">
+                                <i class="bi bi-people me-2"></i>
+                                用户管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html" target="_blank">
+                                <i class="bi bi-phone me-2"></i>
+                                前台预览
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- 主内容区域 -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">属性管理</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addAttributeModal">
+                            <i class="bi bi-plus-circle me-1"></i> 添加属性
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 筛选区域 -->
+                <div class="filter-section mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label for="attributeName" class="form-label">属性名称</label>
+                            <input type="text" class="form-control" id="attributeName" placeholder="请输入属性名称">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="attributeCategory" class="form-label">所属类目</label>
+                            <select class="form-select" id="attributeCategory">
+                                <option value="">全部</option>
+                                <option value="1">护肤品</option>
+                                <option value="2">化妆品</option>
+                                <option value="3">香水</option>
+                                <option value="4">箱包</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="attributeType" class="form-label">属性类型</label>
+                            <select class="form-select" id="attributeType">
+                                <option value="">全部</option>
+                                <option value="1">规格属性</option>
+                                <option value="2">销售属性</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button type="button" class="btn btn-primary w-100">查询</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 属性表格 -->
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th width="5%">ID</th>
+                                        <th width="15%">属性名称</th>
+                                        <th width="15%">所属类目</th>
+                                        <th width="10%">属性类型</th>
+                                        <th width="20%">属性值</th>
+                                        <th width="10%">是否必填</th>
+                                        <th width="10%">状态</th>
+                                        <th width="15%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 规格属性：容量 -->
+                                    <tr>
+                                        <td>1</td>
+                                        <td>容量</td>
+                                        <td>护肤品</td>
+                                        <td>规格属性</td>
+                                        <td>30ml, 50ml, 100ml, 150ml, 200ml</td>
+                                        <td>是</td>
+                                        <td><span class="badge bg-success">启用</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editAttributeModal">编辑</button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">禁用</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- 规格属性：适用肤质 -->
+                                    <tr>
+                                        <td>2</td>
+                                        <td>适用肤质</td>
+                                        <td>护肤品</td>
+                                        <td>规格属性</td>
+                                        <td>干性, 油性, 中性, 混合性, 敏感性</td>
+                                        <td>否</td>
+                                        <td><span class="badge bg-success">启用</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-sm btn-outline-primary">编辑</button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">禁用</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- 销售属性：颜色 -->
+                                    <tr>
+                                        <td>3</td>
+                                        <td>颜色</td>
+                                        <td>化妆品</td>
+                                        <td>销售属性</td>
+                                        <td>红色, 粉色, 橙色, 棕色, 紫色</td>
+                                        <td>是</td>
+                                        <td><span class="badge bg-success">启用</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-sm btn-outline-primary">编辑</button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">禁用</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- 规格属性：材质 -->
+                                    <tr>
+                                        <td>4</td>
+                                        <td>材质</td>
+                                        <td>箱包</td>
+                                        <td>规格属性</td>
+                                        <td>牛皮, 羊皮, 帆布, 尼龙, PU</td>
+                                        <td>是</td>
+                                        <td><span class="badge bg-success">启用</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-sm btn-outline-primary">编辑</button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">禁用</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- 销售属性：尺寸 -->
+                                    <tr>
+                                        <td>5</td>
+                                        <td>尺寸</td>
+                                        <td>箱包</td>
+                                        <td>销售属性</td>
+                                        <td>小号, 中号, 大号</td>
+                                        <td>是</td>
+                                        <td><span class="badge bg-success">启用</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-sm btn-outline-primary">编辑</button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">禁用</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-end mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">下一页</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- 添加属性模态框 -->
+    <div class="modal fade" id="addAttributeModal" tabindex="-1" aria-labelledby="addAttributeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addAttributeModalLabel">添加属性</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="newAttributeName" class="form-label">属性名称</label>
+                                <input type="text" class="form-control" id="newAttributeName" placeholder="请输入属性名称">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="newAttributeCategory" class="form-label">所属类目</label>
+                                <select class="form-select" id="newAttributeCategory">
+                                    <option value="">请选择类目</option>
+                                    <option value="1">护肤品</option>
+                                    <option value="2">化妆品</option>
+                                    <option value="3">香水</option>
+                                    <option value="4">箱包</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="newAttributeType" class="form-label">属性类型</label>
+                                <select class="form-select" id="newAttributeType">
+                                    <option value="1">规格属性</option>
+                                    <option value="2">销售属性</option>
+                                </select>
+                                <div class="form-text">规格属性用于展示商品特性，销售属性用于商品SKU区分</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="newAttributeRequired" class="form-label">是否必填</label>
+                                <div class="form-check form-switch mt-2">
+                                    <input class="form-check-input" type="checkbox" id="newAttributeRequired" checked>
+                                    <label class="form-check-label" for="newAttributeRequired">必填</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="newAttributeValues" class="form-label">属性值</label>
+                                <textarea class="form-control" id="newAttributeValues" rows="3" placeholder="请输入属性值，多个值用英文逗号分隔"></textarea>
+                                <div class="form-text">例如：红色,蓝色,黑色</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="newAttributeDesc" class="form-label">属性描述</label>
+                                <textarea class="form-control" id="newAttributeDesc" rows="2" placeholder="请输入属性描述"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="newAttributeStatus" checked>
+                                    <label class="form-check-label" for="newAttributeStatus">启用</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="newAttributeSearchable">
+                                    <label class="form-check-label" for="newAttributeSearchable">可搜索</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑属性模态框 -->
+    <div class="modal fade" id="editAttributeModal" tabindex="-1" aria-labelledby="editAttributeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editAttributeModalLabel">编辑属性</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editAttributeName" class="form-label">属性名称</label>
+                                <input type="text" class="form-control" id="editAttributeName" value="容量">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editAttributeCategory" class="form-label">所属类目</label>
+                                <select class="form-select" id="editAttributeCategory">
+                                    <option value="1" selected>护肤品</option>
+                                    <option value="2">化妆品</option>
+                                    <option value="3">香水</option>
+                                    <option value="4">箱包</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editAttributeType" class="form-label">属性类型</label>
+                                <select class="form-select" id="editAttributeType">
+                                    <option value="1" selected>规格属性</option>
+                                    <option value="2">销售属性</option>
+                                </select>
+                                <div class="form-text">规格属性用于展示商品特性，销售属性用于商品SKU区分</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editAttributeRequired" class="form-label">是否必填</label>
+                                <div class="form-check form-switch mt-2">
+                                    <input class="form-check-input" type="checkbox" id="editAttributeRequired" checked>
+                                    <label class="form-check-label" for="editAttributeRequired">必填</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="editAttributeValues" class="form-label">属性值</label>
+                                <textarea class="form-control" id="editAttributeValues" rows="3">30ml, 50ml, 100ml, 150ml, 200ml</textarea>
+                                <div class="form-text">例如：红色,蓝色,黑色</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="editAttributeDesc" class="form-label">属性描述</label>
+                                <textarea class="form-control" id="editAttributeDesc" rows="2">护肤品容量规格，用于区分不同大小的产品</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="editAttributeStatus" checked>
+                                    <label class="form-check-label" for="editAttributeStatus">启用</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="editAttributeSearchable" checked>
+                                    <label class="form-check-label" for="editAttributeSearchable">可搜索</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/admin.js"></script>
+</body>
+</html>

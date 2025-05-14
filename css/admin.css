@@ -1,0 +1,187 @@
+/* 后台管理系统样式 */
+body {
+    font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    min-height: 100vh;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    z-index: 100;
+    padding: 0;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, .75);
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-left: 3px solid #0d6efd;
+}
+
+.sidebar .nav-link i {
+    margin-right: 0.5rem;
+}
+
+/* 主内容区域 */
+main {
+    padding-top: 1.5rem;
+}
+
+/* 卡片样式 */
+.card {
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 表格样式 */
+.table th {
+    font-weight: 600;
+    border-top: none;
+}
+
+/* 表单样式 */
+.form-label {
+    font-weight: 500;
+}
+
+/* 自定义按钮样式 */
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+/* 分页样式 */
+.pagination .page-link {
+    color: #0d6efd;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* 响应式调整 */
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+/* 表单元素样式 */
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* 标签和徽章样式 */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+}
+
+/* 图片上传预览区域 */
+.image-preview {
+    width: 100%;
+    height: 200px;
+    background-color: #f8f9fa;
+    border: 1px dashed #ced4da;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* 自定义开关样式 */
+.form-switch .form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* 富文本编辑器容器 */
+.editor-container {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    min-height: 300px;
+}
+
+/* 数据筛选区域 */
+.filter-section {
+    background-color: #fff;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* 操作按钮组 */
+.action-buttons .btn {
+    margin-right: 0.5rem;
+}
+
+/* 状态标签颜色 */
+.status-active {
+    color: #198754;
+}
+
+.status-inactive {
+    color: #dc3545;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

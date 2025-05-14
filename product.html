@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品管理 - 中旅内购商城</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 左侧导航栏 -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="sidebar-header mb-4">
+                        <h5 class="text-center text-white">中旅内购商城</h5>
+                        <h6 class="text-center text-white-50">后台管理系统</h6>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="bi bi-speedometer2 me-2"></i>
+                                控制台
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="category.html">
+                                <i class="bi bi-grid me-2"></i>
+                                类目管理
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="product.html">
+                                <i class="bi bi-box-seam me-2"></i>
+                                商品管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order.html">
+                                <i class="bi bi-receipt me-2"></i>
+                                订单管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user.html">
+                                <i class="bi bi-people me-2"></i>
+                                用户管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="role.html">
+                                <i class="bi bi-person-badge me-2"></i>
+                                角色管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html" target="_blank">
+                                <i class="bi bi-phone me-2"></i>
+                                前台预览
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- 主内容区域 -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">商品管理</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                            <i class="bi bi-plus-circle me-1"></i> 添加商品
+                        </button>
+                        <button type="button" class="btn btn-sm btn-success me-2" data-bs-toggle="modal" data-bs-target="#importExcelModal">
+                            <i class="bi bi-file-earmark-excel me-1"></i> Excel导入
+                        </button>
+                        <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#wmsIntegrationModal">
+                            <i class="bi bi-database-fill me-1"></i> WMS同步
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 筛选区域 -->
+                <div class="filter-section mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label for="productName" class="form-label">商品名称</label>
+                            <input type="text" class="form-control" id="productName" placeholder="请输入商品名称">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productCategory" class="form-label">商品类目</label>
+                            <select class="form-select" id="productCategory">
+                                <option value="">全部</option>
+                                <option value="1">护肤品</option>
+                                <option value="2">化妆品</option>
+                                <option value="3">香水</option>
+                                <option value="4">箱包</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productStatus" class="form-label">商品状态</label>
+                            <select class="form-select" id="productStatus">
+                                <option value="">全部</option>
+                                <option value="1">上架</option>
+                                <option value="0">下架</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button type="button" class="btn btn-primary w-100">查询</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品表格 -->
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th width="5%">ID</th>
+                                        <th width="10%">商品图片</th>
+                                        <th width="20%">商品名称</th>
+                                        <th width="10%">商品类目</th>
+                                        <th width="10%">价格</th>
+                                        <th width="10%">库存</th>
+                                        <th width="10%">销量</th>
+                                        <th width="10%">状态</th>
+                                        <th width="15%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 商品1 -->
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <img src="../images/product1.jpg" alt="SK-II 护肤精华露" class="product-thumbnail">
+                                        </td>
+                                        <td>SK-II 护肤精华露 230ml</td>
+                                        <td>护肤品</td>
+                                        <td>¥1,580</td>
+                                        <td>120</td>
+                                        <td>85</td>
+                                        <td><span class="badge bg-success">上架</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editProductModal">编辑</button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">下架</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- 商品2 -->
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <img src="../images/product2.jpg" alt="雅诗兰黛 小棕瓶精华" class="product-thumbnail">
+                                        </td>
+                                        <td>雅诗兰黛 小棕瓶精华 50ml</td>
+                                        <td>护肤品</td>
+                                        <td>¥980</td>
+                                        <td>85</td>
+                                        <td>120</td>
+                                        <td><span class="badge bg-success">上架</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-sm btn-outline-primary">编辑</button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">下架</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- 商品3 -->
+                                    <tr>
+                                        <td>3</td>
+                                        <td>
+                                            <img src="../images/product3.jpg" alt="香奈儿 可可小姐香水" class="product-thumbnail">
+                                        </td>
+                                        <td>香奈儿 可可小姐香水 100ml</td>
+                                        <td>香水</td>
+                                        <td>¥1,250</td>
+                                        <td>60</td>
+                                        <td>45</td>
+                                        <td><span class="badge bg-success">上架</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-sm btn-outline-primary">编辑</button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">下架</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- 商品4 -->
+                                    <tr>
+                                        <td>4</td>
+                                        <td>
+                                            <img src="../images/product4.jpg" alt="LV 手提包" class="product-thumbnail">
+                                        </td>
+                                        <td>LV Neverfull 手提包 中号</td>
+                                        <td>箱包</td>
+                                        <td>¥12,500</td>
+                                        <td>15</td>
+                                        <td>8</td>
+                                        <td><span class="badge bg-secondary">下架</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-sm btn-outline-primary">编辑</button>
+                                                <button type="button" class="btn btn-sm btn-outline-success">上架</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-end mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">下一页</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- 添加商品模态框 -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProductModalLabel">添加商品</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="productSource" id="manualInput" value="manual" checked>
+                                <label class="form-check-label" for="manualInput">手动输入</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="productSource" id="wmsSelect" value="wms">
+                                <label class="form-check-label" for="wmsSelect">从WMS选择</label>
+                            </div>
+                        </div>
+                        
+                        <!-- 手动输入区域 -->
+                        <div id="manualInputArea">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="newProductName" class="form-label">商品名称</label>
+                                    <input type="text" class="form-control" id="newProductName" placeholder="请输入商品名称">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="newProductCategory" class="form-label">商品类目</label>
+                                    <select class="form-select" id="newProductCategory">
+                                        <option value="">请选择类目</option>
+                                        <option value="1">护肤品</option>
+                                        <option value="2">化妆品</option>
+                                        <option value="3">香水</option>
+                                        <option value="4">箱包</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- WMS选择区域 -->
+                        <div id="wmsSelectArea" style="display: none;">
+                            <div class="mb-3">
+                                <label for="wmsProductSearch" class="form-label">搜索WMS商品</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="wmsProductSearch" placeholder="输入商品编码或名称搜索">
+                                    <button class="btn btn-outline-secondary" type="button">搜索</button>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">选择商品</label>
+                                <select class="form-select" id="wmsProductSelect" size="5">
+                                    <option value="WMS001">WMS001 - SK-II 护肤精华露 230ml</option>
+                                    <option value="WMS002">WMS002 - 雅诗兰黛 小棕瓶精华 50ml</option>
+                                    <option value="WMS003">WMS003 - 香奈儿 可可小姐香水 50ml</option>
+                                </select>
+                                <div class="form-text">选择后将自动填充商品信息</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="newProductPrice" class="form-label">商品价格</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">¥</span>
+                                    <input type="number" class="form-control" id="newProductPrice" placeholder="请输入商品价格">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="newProductStock" class="form-label">库存数量</label>
+                                <input type="number" class="form-control" id="newProductStock" placeholder="请输入库存数量">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="newProductImage" class="form-label">商品图片</label>
+                                <input type="file" class="form-control" id="newProductImage" multiple>
+                                <div class="form-text">可上传多张图片，第一张将作为主图</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="newProductDesc" class="form-label">商品描述</label>
+                                <textarea class="form-control" id="newProductDesc" rows="3" placeholder="请输入商品描述"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label class="form-label">商品属性</label>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row mb-2">
+                                            <div class="col-md-4">
+                                                <label class="form-label">容量</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="capacity1">
+                                                    <label class="form-check-label" for="capacity1">30ml</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="capacity2">
+                                                    <label class="form-check-label" for="capacity2">50ml</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="capacity3">
+                                                    <label class="form-check-label" for="capacity3">100ml</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label">颜色</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="color1">
+                                                    <label class="form-check-label" for="color1">红色</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="color2">
+                                                    <label class="form-check-label" for="color2">黑色</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="color3">
+                                                    <label class="form-check-label" for="color3">蓝色</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label">适用肤质</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="skinType1">
+                                                    <label class="form-check-label" for="skinType1">干性</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="skinType2">
+                                                    <label class="form-check-label" for="skinType2">油性</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="skinType3">
+                                                    <label class="form-check-label" for="skinType3">敏感性</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="newProductStatus" checked>
+                                    <label class="form-check-label" for="newProductStatus">上架</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="newProductRecommend">
+                                    <label class="form-check-label" for="newProductRecommend">推荐</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Excel导入模态框 -->
+    <div class="modal fade" id="importExcelModal" tabindex="-1" aria-labelledby="importExcelModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="importExcelModalLabel">Excel批量导入商品</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="excelFile" class="form-label">选择Excel文件</label>
+                            <input class="form-control" type="file" id="excelFile" accept=".xlsx, .xls">
+                            <div class="form-text">支持.xlsx和.xls格式，文件大小不超过10MB</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">模板下载</label>
+                            <div>
+                                <a href="templates/product_import_template.xlsx" download class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-download me-1"></i> 下载导入模板
+                                </a>
+                            </div>
+                            <div class="form-text">请按照模板格式填写商品信息</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">开始导入</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WMS同步模态框 -->
+    <div class="modal fade" id="wmsIntegrationModal" tabindex="-1" aria-labelledby="wmsIntegrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="wmsIntegrationModalLabel">WMS商品同步</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="mb-0">WMS系统商品</h6>
+                            <div>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-2">
+                                    <i class="bi bi-arrow-repeat me-1"></i> 刷新
+                                </button>
+                                <div class="form-check form-check-inline mb-0">
+                                    <input class="form-check-input" type="checkbox" id="selectAllWmsProducts">
+                                    <label class="form-check-label" for="selectAllWmsProducts">全选</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th width="5%"></th>
+                                        <th width="15%">商品编码</th>
+                                        <th width="30%">商品名称</th>
+                                        <th width="15%">类别</th>
+                                        <th width="15%">价格</th>
+                                        <th width="10%">库存</th>
+                                        <th width="10%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input class="form-check-input" type="checkbox" value="">
+                                        </td>
+                                        <td>WMS001</td>
+                                        <td>SK-II 护肤精华露 230ml</td>
+                                        <td>护肤品</td>
+                                        <td>¥1,580</td>
+                                        <td>120</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-outline-primary">导入</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="form-check-input" type="checkbox" value="">
+                                        </td>
+                                        <td>WMS002</td>
+                                        <td>雅诗兰黛 小棕瓶精华 50ml</td>
+                                        <td>护肤品</td>
+                                        <td>¥980</td>
+                                        <td>85</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-outline-primary">导入</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="form-check-input" type="checkbox" value="">
+                                        </td>
+                                        <td>WMS003</td>
+                                        <td>香奈儿 可可小姐香水 50ml</td>
+                                        <td>香水</td>
+                                        <td>¥850</td>
+                                        <td>60</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-outline-primary">导入</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-sm justify-content-end">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">下一页</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="autoSyncWms">
+                            <label class="form-check-label" for="autoSyncWms">启用自动同步（每日凌晨2点自动同步WMS商品数据）</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">导入选中商品</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑商品模态框 -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProductModalLabel">编辑商品</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editProductName" class="form-label">商品名称</label>
+                                <input type="text" class="form-control" id="editProductName" value="SK-II 护肤精华露 230ml">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editProductCategory" class="form-label">商品类目</label>
+                                <select class="form-select" id="editProductCategory">
+                                    <option value="1" selected>护肤品</option>
+                                    <option value="2">化妆品</option>
+                                    <option value="3">香水</option>
+                                    <option value="4">箱包</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editProductPrice" class="form-label">商品价格</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">¥</span>
+                                    <input type="number" class="form-control" id="editProductPrice" value="1580">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editProductStock" class="form-label">库存数量</label>
+                                <input type="number" class="form-control" id="editProductStock" value="120">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="editProductImage" class="form-label">商品图片</label>
+                                <div class="mb-2">
+                                    <img src="../images/product1.jpg" alt="当前商品图片" class="img-thumbnail" style="height: 100px;">
+                                </div>
+                                <input type="file" class="form-control" id="editProductImage" multiple>
+                                <div class="form-text">可上传多张图片，第一张将作为主图</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="editProductDesc" class="form-label">商品描述</label>
+                                <textarea class="form-control" id="editProductDesc" rows="3">SK-II 护肤精华露，蕴含PITERA成分，能够有效改善肌肤问题，令肌肤水润透亮。</textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label class="form-label">商品属性</label>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row mb-2">
+                                            <div class="col-md-4">
+                                                <label class="form-label">容量</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="editCapacity1">
+                                                    <label class="form-check-label" for="editCapacity1">30ml</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="editCapacity2">
+                                                    <label class="form-check-label" for="editCapacity2">50ml</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="editCapacity3" checked>
+                                                    <label class="form-check-label" for="editCapacity3">230ml</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label">适用肤质</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="editSkinType1" checked>
+                                                    <label class="form-check-label" for="editSkinType1">干性</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="editSkinType2" checked>
+                                                    <label class="form-check-label" for="editSkinType2">油性</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="editSkinType3" checked>
+                                                    <label class="form-check-label" for="editSkinType3">敏感性</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="editProductStatus" checked>
+                                    <label class="form-check-label" for="editProductStatus">上架</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="editProductRecommend" checked>
+                                    <label class="form-check-label" for="editProductRecommend">推荐</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 处理商品来源选择切换
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取单选按钮和对应的内容区域
+            const manualInput = document.getElementById('manualInput');
+            const wmsSelect = document.getElementById('wmsSelect');
+            const manualInputArea = document.getElementById('manualInputArea');
+            const wmsSelectArea = document.getElementById('wmsSelectArea');
+            
+            // 添加事件监听器
+            manualInput.addEventListener('change', function() {
+                if(this.checked) {
+                    manualInputArea.style.display = 'block';
+                    wmsSelectArea.style.display = 'none';
+                }
+            });
+            
+            wmsSelect.addEventListener('change', function() {
+                if(this.checked) {
+                    manualInputArea.style.display = 'none';
+                    wmsSelectArea.style.display = 'block';
+                }
+            });
+            
+            // WMS商品选择后自动填充信息
+            const wmsProductSelect = document.getElementById('wmsProductSelect');
+            wmsProductSelect.addEventListener('change', function() {
+                // 这里可以添加AJAX请求获取WMS商品详细信息
+                // 演示用，简单模拟
+                const selectedOption = this.options[this.selectedIndex].text;
+                alert('已选择: ' + selectedOption + '\n将自动填充商品信息');
+            });
+        });
+    </script>
+</body>
+</html>

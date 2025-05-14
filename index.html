@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理系统 - 中旅内购商城</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 左侧导航栏 -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="sidebar-header mb-4">
+                        <h5 class="text-center text-white">中旅内购商城</h5>
+                        <h6 class="text-center text-white-50">后台管理系统</h6>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="bi bi-speedometer2 me-2"></i>
+                                控制台
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="category.html">
+                                <i class="bi bi-grid me-2"></i>
+                                类目管理
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="product.html">
+                                <i class="bi bi-box-seam me-2"></i>
+                                商品管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order.html">
+                                <i class="bi bi-receipt me-2"></i>
+                                订单管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user.html">
+                                <i class="bi bi-people me-2"></i>
+                                用户管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="role.html">
+                                <i class="bi bi-person-badge me-2"></i>
+                                角色管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html" target="_blank">
+                                <i class="bi bi-phone me-2"></i>
+                                前台预览
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- 主内容区域 -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">控制台</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i> 管理员
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="#">个人设置</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">退出登录</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 数据概览卡片 -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="card-subtitle mb-2 text-muted">今日订单</h6>
+                                        <h2 class="card-title mb-0">128</h2>
+                                    </div>
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-cart-check text-primary fs-3"></i>
+                                    </div>
+                                </div>
+                                <p class="card-text mt-3 text-success"><i class="bi bi-arrow-up"></i> 12.5% 较昨日</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="card-subtitle mb-2 text-muted">今日销售额</h6>
+                                        <h2 class="card-title mb-0">¥25,680</h2>
+                                    </div>
+                                    <div class="bg-success bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-currency-yen text-success fs-3"></i>
+                                    </div>
+                                </div>
+                                <p class="card-text mt-3 text-success"><i class="bi bi-arrow-up"></i> 8.3% 较昨日</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="card-subtitle mb-2 text-muted">新增用户</h6>
+                                        <h2 class="card-title mb-0">56</h2>
+                                    </div>
+                                    <div class="bg-info bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-person-plus text-info fs-3"></i>
+                                    </div>
+                                </div>
+                                <p class="card-text mt-3 text-success"><i class="bi bi-arrow-up"></i> 5.2% 较昨日</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="card-subtitle mb-2 text-muted">商品浏览量</h6>
+                                        <h2 class="card-title mb-0">3,562</h2>
+                                    </div>
+                                    <div class="bg-warning bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-eye text-warning fs-3"></i>
+                                    </div>
+                                </div>
+                                <p class="card-text mt-3 text-success"><i class="bi bi-arrow-up"></i> 15.7% 较昨日</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 最近订单和热销商品 -->
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">最近订单</h5>
+                                    <a href="order.html" class="btn btn-sm btn-outline-primary">查看全部</a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>订单号</th>
+                                                <th>客户</th>
+                                                <th>商品</th>
+                                                <th>金额</th>
+                                                <th>状态</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>ORD-2023-10001</td>
+                                                <td>张三</td>
+                                                <td>SK-II 护肤精华露</td>
+                                                <td>¥1,299</td>
+                                                <td><span class="badge bg-success">已完成</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ORD-2023-10002</td>
+                                                <td>李四</td>
+                                                <td>兰蔻小黑瓶精华</td>
+                                                <td>¥850</td>
+                                                <td><span class="badge bg-warning text-dark">待发货</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ORD-2023-10003</td>
+                                                <td>王五</td>
+                                                <td>香奈儿包包</td>
+                                                <td>¥15,800</td>
+                                                <td><span class="badge bg-info">待收货</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ORD-2023-10004</td>
+                                                <td>赵六</td>
+                                                <td>迪奥口红套装</td>
+                                                <td>¥2,450</td>
+                                                <td><span class="badge bg-primary">待付款</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">热销商品</h5>
+                                    <a href="product.html" class="btn btn-sm btn-outline-primary">查看全部</a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light rounded" style="width: 40px; height: 40px;"></div>
+                                            <div class="ms-3">
+                                                <h6 class="mb-0">SK-II 护肤精华露</h6>
+                                                <small class="text-muted">护肤品</small>
+                                            </div>
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">128</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light rounded" style="width: 40px; height: 40px;"></div>
+                                            <div class="ms-3">
+                                                <h6 class="mb-0">兰蔻小黑瓶精华</h6>
+                                                <small class="text-muted">护肤品</small>
+                                            </div>
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">96</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light rounded" style="width: 40px; height: 40px;"></div>
+                                            <div class="ms-3">
+                                                <h6 class="mb-0">香奈儿包包</h6>
+                                                <small class="text-muted">箱包</small>
+                                            </div>
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">85</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light rounded" style="width: 40px; height: 40px;"></div>
+                                            <div class="ms-3">
+                                                <h6 class="mb-0">迪奥口红套装</h6>
+                                                <small class="text-muted">化妆品</small>
+                                            </div>
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">72</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/admin.js"></script>
+</body>
+</html>
