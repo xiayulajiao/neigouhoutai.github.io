@@ -1,0 +1,1220 @@
+{
+  "run_date": "2026-08-17",
+  "data_mode": "synthetic_demo",
+  "focus": "packaging and food-processing equipment exporters / overseas buyers",
+  "automation_policy": "research and scoring only; no crawling or outbound sending",
+  "input_records": 18,
+  "unique_records": 18,
+  "duplicates_merged": 0,
+  "duplicate_notes": [],
+  "grade_counts": {
+    "A": 9,
+    "B": 7,
+    "C": 2
+  },
+  "annotation_counts": {
+    "A_人工确认": 6,
+    "HOLD_技术认证": 1,
+    "HOLD_地区规则": 1,
+    "HOLD_联系合规": 1,
+    "C_禁止联系": 1,
+    "B_角色待确认": 1,
+    "B_补第二信号": 2,
+    "B_预算待确认": 1,
+    "C_排除": 2,
+    "B_补证据": 1,
+    "C_信息不足": 1
+  },
+  "model_human_confusion": {
+    "model_A__human_A": 5,
+    "model_A__human_HOLD": 2,
+    "model_B__human_HOLD": 1,
+    "model_B__human_C": 2,
+    "model_A__human_B": 2,
+    "model_B__human_B": 3,
+    "model_B__human_A": 1,
+    "model_C__human_C": 2
+  },
+  "annotation_mismatches": [
+    {
+      "company": "Coastal Pharma Packaging",
+      "model_grade": "A",
+      "human_label": "HOLD_技术认证",
+      "reason": "需求信号明确，但药品设备需要先核对认证和验证能力"
+    },
+    {
+      "company": "Maple Route Machinery",
+      "model_grade": "A",
+      "human_label": "HOLD_地区规则",
+      "reason": "公司和产品匹配，但加拿大联系规则需要单独确认，暂不自动联系"
+    },
+    {
+      "company": "Nordlicht Food Automation",
+      "model_grade": "B",
+      "human_label": "HOLD_联系合规",
+      "reason": "商业信号较强，但当前只有实名个人邮箱，需人工确认联系依据"
+    },
+    {
+      "company": "Westland Cartoning Group",
+      "model_grade": "B",
+      "human_label": "C_禁止联系",
+      "reason": "客户已明确拒绝供应商营销，进入抑制名单"
+    },
+    {
+      "company": "Eastgate Machinery Services",
+      "model_grade": "A",
+      "human_label": "B_角色待确认",
+      "reason": "服务商可能影响设备采购，但需要确认是否代理或仅提供维修"
+    },
+    {
+      "company": "Sunrise Label & Pack",
+      "model_grade": "A",
+      "human_label": "B_预算待确认",
+      "reason": "有代理缺口但规模较小，先确认是否有技术和售后能力"
+    },
+    {
+      "company": "Riverton Packaging Systems",
+      "model_grade": "B",
+      "human_label": "A_人工确认",
+      "reason": "扩建项目和包装工程师招聘指向明确，建议先走官网合作表单"
+    },
+    {
+      "company": "Westbridge Import Network",
+      "model_grade": "B",
+      "human_label": "C_信息不足",
+      "reason": "只有目录收录，没有公司官网或近期需求证据"
+    }
+  ],
+  "contact_review_queue": [
+    {
+      "company": "Atlas Carton & Conveying",
+      "domain": "atlas-carton.example",
+      "country": "United States",
+      "buyer_type": "system integrator",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://atlas-carton.example/careers/automation-engineer",
+          "observed_on": "2026-08-10",
+          "excerpt": "Automation engineer role supports carton and case packing lines."
+        },
+        {
+          "signal": "new_product_line",
+          "source_type": "trade_fair",
+          "url": "https://packaging-solutions-demo.example/exhibitors/atlas-carton",
+          "observed_on": "2026-07-24",
+          "excerpt": "New integrated carton packing line shown at the event."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "连续招聘自动化工程师并在展会发布新整线方案",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Coastal Pharma Packaging",
+      "domain": "coastal-pharma-pack.example",
+      "country": "Australia",
+      "buyer_type": "pharma manufacturer",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "new_product_line",
+          "source_type": "official_site",
+          "url": "https://coastal-pharma-pack.example/news/new-format",
+          "observed_on": "2026-07-27",
+          "excerpt": "New blister packaging format enters validation."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://coastal-pharma-pack.example/careers/validation-engineer",
+          "observed_on": "2026-08-05",
+          "excerpt": "Validation engineer role supports packaging equipment qualification."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "HOLD_技术认证",
+      "annotation_reason": "需求信号明确，但药品设备需要先核对认证和验证能力",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Evergreen Fill & Pack",
+      "domain": "evergreen-fillpack.example",
+      "country": "United States",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://evergreen-fillpack.example/supplier-program",
+          "observed_on": "2026-08-12",
+          "excerpt": "Inviting new suppliers for pouch filling and secondary packaging."
+        },
+        {
+          "signal": "distributor_gap",
+          "source_type": "trade_fair",
+          "url": "https://packexpo-demo.example/exhibitors/evergreen",
+          "observed_on": "2026-07-22",
+          "excerpt": "Distributor profile shows a gap in automated pouch filling."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "两个近期采购/渠道信号，官网列出多个食品客户行业",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Gulf Meridian Equipment",
+      "domain": "gulf-meridian.example",
+      "country": "United Arab Emirates",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://gulf-meridian.example/supplier-registration",
+          "observed_on": "2026-08-02",
+          "excerpt": "Supplier registration available for packaging machinery brands."
+        },
+        {
+          "signal": "distributor_gap",
+          "source_type": "association",
+          "url": "https://gulf-processing-association.example/members/gulf-meridian",
+          "observed_on": "2026-07-13",
+          "excerpt": "Member profile shows filling and end-of-line equipment gap."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "代理品牌缺口和供应商登记同时出现，适合先发合作资料",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Maple Route Machinery",
+      "domain": "maple-route-machinery.example",
+      "country": "Canada",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://maple-route-machinery.example/supplier-portal",
+          "observed_on": "2026-08-06",
+          "excerpt": "New supplier portal requests packaging equipment capabilities."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "association",
+          "url": "https://canadian-packaging-demo.example/members/maple-route",
+          "observed_on": "2026-07-02",
+          "excerpt": "Association listing includes packaging machinery distribution."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "HOLD_地区规则",
+      "annotation_reason": "公司和产品匹配，但加拿大联系规则需要单独确认，暂不自动联系",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Eastgate Machinery Services",
+      "domain": "eastgate-machinery.example",
+      "country": "United States",
+      "buyer_type": "equipment service provider",
+      "product_fit": "packaging equipment",
+      "score": 95,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +25",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://eastgate-machinery.example/jobs/field-technician",
+          "observed_on": "2026-08-06",
+          "excerpt": "Hiring field technicians for packaging line service."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://service-tech-demo.example/exhibitors/eastgate",
+          "observed_on": "2026-07-05",
+          "excerpt": "Service provider profile covers packaging line maintenance."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "B_角色待确认",
+      "annotation_reason": "服务商可能影响设备采购，但需要确认是否代理或仅提供维修",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Sunrise Label & Pack",
+      "domain": "sunrise-label-pack.example",
+      "country": "Malaysia",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 90,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size is present but weaker (+5)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "distributor_gap",
+          "source_type": "official_site",
+          "url": "https://sunrise-label-pack.example/brands",
+          "observed_on": "2026-08-04",
+          "excerpt": "Portfolio includes labelling equipment and seeks pouch filling partner."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://asean-packaging-demo.example/exhibitors/sunrise",
+          "observed_on": "2026-07-12",
+          "excerpt": "Exhibitor profile lists regional service coverage."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "B_预算待确认",
+      "annotation_reason": "有代理缺口但规模较小，先确认是否有技术和售后能力",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Golden Grain Processors",
+      "domain": "golden-grain.example",
+      "country": "Thailand",
+      "buyer_type": "food manufacturer",
+      "product_fit": "food-processing equipment",
+      "score": 85,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "adjacent product category (+10)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "plant_expansion",
+          "source_type": "official_site",
+          "url": "https://golden-grain.example/news/factory-two",
+          "observed_on": "2026-08-07",
+          "excerpt": "Second processing facility begins equipment planning."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://golden-grain.example/careers/engineering",
+          "observed_on": "2026-07-21",
+          "excerpt": "Engineering manager role includes packaging line commissioning."
+        },
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://golden-grain.example/procurement/inquiry",
+          "observed_on": "2026-08-09",
+          "excerpt": "Supplier inquiry form open for processing and packaging equipment."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "新工厂、设备工程师招聘和采购咨询页同时出现",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Sierra Mesa Beverage Group",
+      "domain": "sierramesa-beverage.example",
+      "country": "Mexico",
+      "buyer_type": "beverage manufacturer",
+      "product_fit": "food-processing equipment",
+      "score": 85,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "adjacent product category (+10)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "plant_expansion",
+          "source_type": "official_site",
+          "url": "https://sierramesa-beverage.example/news/new-line",
+          "observed_on": "2026-07-19",
+          "excerpt": "A new canning and secondary packaging line is scheduled."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://sierramesa-beverage.example/jobs/maintenance-supervisor",
+          "observed_on": "2026-07-26",
+          "excerpt": "Maintenance supervisor role mentions packaging line uptime."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://beverage-tech-demo.example/exhibitors/sierra-mesa",
+          "observed_on": "2026-06-30",
+          "excerpt": "Exhibitor profile lists a multi-site beverage operation."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "新产线、设备维护招聘和行业展会三个信号，适合技术型简报",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    }
+  ],
+  "results": [
+    {
+      "company": "Atlas Carton & Conveying",
+      "domain": "atlas-carton.example",
+      "country": "United States",
+      "buyer_type": "system integrator",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://atlas-carton.example/careers/automation-engineer",
+          "observed_on": "2026-08-10",
+          "excerpt": "Automation engineer role supports carton and case packing lines."
+        },
+        {
+          "signal": "new_product_line",
+          "source_type": "trade_fair",
+          "url": "https://packaging-solutions-demo.example/exhibitors/atlas-carton",
+          "observed_on": "2026-07-24",
+          "excerpt": "New integrated carton packing line shown at the event."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "连续招聘自动化工程师并在展会发布新整线方案",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Coastal Pharma Packaging",
+      "domain": "coastal-pharma-pack.example",
+      "country": "Australia",
+      "buyer_type": "pharma manufacturer",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "new_product_line",
+          "source_type": "official_site",
+          "url": "https://coastal-pharma-pack.example/news/new-format",
+          "observed_on": "2026-07-27",
+          "excerpt": "New blister packaging format enters validation."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://coastal-pharma-pack.example/careers/validation-engineer",
+          "observed_on": "2026-08-05",
+          "excerpt": "Validation engineer role supports packaging equipment qualification."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "HOLD_技术认证",
+      "annotation_reason": "需求信号明确，但药品设备需要先核对认证和验证能力",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Evergreen Fill & Pack",
+      "domain": "evergreen-fillpack.example",
+      "country": "United States",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://evergreen-fillpack.example/supplier-program",
+          "observed_on": "2026-08-12",
+          "excerpt": "Inviting new suppliers for pouch filling and secondary packaging."
+        },
+        {
+          "signal": "distributor_gap",
+          "source_type": "trade_fair",
+          "url": "https://packexpo-demo.example/exhibitors/evergreen",
+          "observed_on": "2026-07-22",
+          "excerpt": "Distributor profile shows a gap in automated pouch filling."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "两个近期采购/渠道信号，官网列出多个食品客户行业",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Gulf Meridian Equipment",
+      "domain": "gulf-meridian.example",
+      "country": "United Arab Emirates",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://gulf-meridian.example/supplier-registration",
+          "observed_on": "2026-08-02",
+          "excerpt": "Supplier registration available for packaging machinery brands."
+        },
+        {
+          "signal": "distributor_gap",
+          "source_type": "association",
+          "url": "https://gulf-processing-association.example/members/gulf-meridian",
+          "observed_on": "2026-07-13",
+          "excerpt": "Member profile shows filling and end-of-line equipment gap."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "代理品牌缺口和供应商登记同时出现，适合先发合作资料",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Maple Route Machinery",
+      "domain": "maple-route-machinery.example",
+      "country": "Canada",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://maple-route-machinery.example/supplier-portal",
+          "observed_on": "2026-08-06",
+          "excerpt": "New supplier portal requests packaging equipment capabilities."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "association",
+          "url": "https://canadian-packaging-demo.example/members/maple-route",
+          "observed_on": "2026-07-02",
+          "excerpt": "Association listing includes packaging machinery distribution."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "HOLD_地区规则",
+      "annotation_reason": "公司和产品匹配，但加拿大联系规则需要单独确认，暂不自动联系",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Nordlicht Food Automation",
+      "domain": "nordlicht-food.example",
+      "country": "Germany",
+      "buyer_type": "system integrator",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "contact route is not an approved corporate/authorized route"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://nordlicht-food.example/partner-inquiry",
+          "observed_on": "2026-08-08",
+          "excerpt": "Partner inquiries open for automated food packaging lines."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://foodautomation-demo.example/exhibitors/nordlicht",
+          "observed_on": "2026-07-18",
+          "excerpt": "Systems integrator profile covers filling and cartoning."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "HOLD_联系合规",
+      "annotation_reason": "商业信号较强，但当前只有实名个人邮箱，需人工确认联系依据",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Westland Cartoning Group",
+      "domain": "westland-cartoning.example",
+      "country": "Netherlands",
+      "buyer_type": "system integrator",
+      "product_fit": "packaging equipment",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "suppressed or opted out"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://westland-cartoning.example/vendor-policy",
+          "observed_on": "2026-08-11",
+          "excerpt": "Vendor policy states no unsolicited commercial approaches."
+        },
+        {
+          "signal": "new_product_line",
+          "source_type": "trade_fair",
+          "url": "https://eu-packaging-demo.example/exhibitors/westland",
+          "observed_on": "2026-07-16",
+          "excerpt": "New cartoning line displayed at the show."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "C_禁止联系",
+      "annotation_reason": "客户已明确拒绝供应商营销，进入抑制名单",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Eastgate Machinery Services",
+      "domain": "eastgate-machinery.example",
+      "country": "United States",
+      "buyer_type": "equipment service provider",
+      "product_fit": "packaging equipment",
+      "score": 95,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +25",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://eastgate-machinery.example/jobs/field-technician",
+          "observed_on": "2026-08-06",
+          "excerpt": "Hiring field technicians for packaging line service."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://service-tech-demo.example/exhibitors/eastgate",
+          "observed_on": "2026-07-05",
+          "excerpt": "Service provider profile covers packaging line maintenance."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "B_角色待确认",
+      "annotation_reason": "服务商可能影响设备采购，但需要确认是否代理或仅提供维修",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Blue Harbor Process Partners",
+      "domain": "blueharbor-process.example",
+      "country": "Singapore",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 90,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +20",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "evidence is not cross-checked across two source types",
+        "fewer than two distinct intent signals"
+      ],
+      "evidence": [
+        {
+          "signal": "distributor_gap",
+          "source_type": "official_site",
+          "url": "https://blueharbor-process.example/brands",
+          "observed_on": "2026-07-31",
+          "excerpt": "Current portfolio lists conveyors and labelling, no pouch filling."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "B_补第二信号",
+      "annotation_reason": "产品匹配但只有经销商品类缺口，暂不推断有采购计划",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Sunrise Label & Pack",
+      "domain": "sunrise-label-pack.example",
+      "country": "Malaysia",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 90,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size is present but weaker (+5)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "distributor_gap",
+          "source_type": "official_site",
+          "url": "https://sunrise-label-pack.example/brands",
+          "observed_on": "2026-08-04",
+          "excerpt": "Portfolio includes labelling equipment and seeks pouch filling partner."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://asean-packaging-demo.example/exhibitors/sunrise",
+          "observed_on": "2026-07-12",
+          "excerpt": "Exhibitor profile lists regional service coverage."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "B_预算待确认",
+      "annotation_reason": "有代理缺口但规模较小，先确认是否有技术和售后能力",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Golden Grain Processors",
+      "domain": "golden-grain.example",
+      "country": "Thailand",
+      "buyer_type": "food manufacturer",
+      "product_fit": "food-processing equipment",
+      "score": 85,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "adjacent product category (+10)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "plant_expansion",
+          "source_type": "official_site",
+          "url": "https://golden-grain.example/news/factory-two",
+          "observed_on": "2026-08-07",
+          "excerpt": "Second processing facility begins equipment planning."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://golden-grain.example/careers/engineering",
+          "observed_on": "2026-07-21",
+          "excerpt": "Engineering manager role includes packaging line commissioning."
+        },
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://golden-grain.example/procurement/inquiry",
+          "observed_on": "2026-08-09",
+          "excerpt": "Supplier inquiry form open for processing and packaging equipment."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "新工厂、设备工程师招聘和采购咨询页同时出现",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Sierra Mesa Beverage Group",
+      "domain": "sierramesa-beverage.example",
+      "country": "Mexico",
+      "buyer_type": "beverage manufacturer",
+      "product_fit": "food-processing equipment",
+      "score": 85,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "adjacent product category (+10)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "plant_expansion",
+          "source_type": "official_site",
+          "url": "https://sierramesa-beverage.example/news/new-line",
+          "observed_on": "2026-07-19",
+          "excerpt": "A new canning and secondary packaging line is scheduled."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://sierramesa-beverage.example/jobs/maintenance-supervisor",
+          "observed_on": "2026-07-26",
+          "excerpt": "Maintenance supervisor role mentions packaging line uptime."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://beverage-tech-demo.example/exhibitors/sierra-mesa",
+          "observed_on": "2026-06-30",
+          "excerpt": "Exhibitor profile lists a multi-site beverage operation."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "新产线、设备维护招聘和行业展会三个信号，适合技术型简报",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Riverton Packaging Systems",
+      "domain": "riverton-packaging.example",
+      "country": "United Kingdom",
+      "buyer_type": "system integrator",
+      "product_fit": "packaging and food-processing equipment",
+      "score": 80,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": false,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "company could not be verified from an authoritative source"
+      ],
+      "evidence": [
+        {
+          "signal": "plant_expansion",
+          "source_type": "news",
+          "url": "https://riverside-industry-demo.example/riverton-expansion",
+          "observed_on": "2026-08-03",
+          "excerpt": "New automation integration workshop planned for Q4."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://riverton-packaging.example/careers/packaging-engineer",
+          "observed_on": "2026-07-29",
+          "excerpt": "Hiring a packaging engineer for line integration projects."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "A_人工确认",
+      "annotation_reason": "扩建项目和包装工程师招聘指向明确，建议先走官网合作表单",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Old Harbor Export Training",
+      "domain": "old-harbor-training.example",
+      "country": "United States",
+      "buyer_type": "training agency",
+      "product_fit": "training service",
+      "score": 75,
+      "grade": "C",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "adjacent product category (+10)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size is present but weaker (+5)"
+      ],
+      "hard_gates_failed": [
+        "excluded business type"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://old-harbor-training.example/partners",
+          "observed_on": "2026-08-02",
+          "excerpt": "Training provider seeking curriculum partners."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "association",
+          "url": "https://training-demo.example/members/old-harbor",
+          "observed_on": "2026-07-15",
+          "excerpt": "Member profile describes export training courses."
+        }
+      ],
+      "next_action": "archive or suppress; do not contact",
+      "human_label": "C_排除",
+      "annotation_reason": "培训机构，不属于目标买家",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Pacific Grove Foods",
+      "domain": "pacific-grove-foods.example",
+      "country": "Australia",
+      "buyer_type": "food manufacturer",
+      "product_fit": "packaging equipment",
+      "score": 75,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": false,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +25",
+        "freshest evidence contributes +10",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "company could not be verified from an authoritative source",
+        "evidence is not cross-checked across two source types",
+        "fewer than two distinct intent signals"
+      ],
+      "evidence": [
+        {
+          "signal": "plant_expansion",
+          "source_type": "news",
+          "url": "https://australia-food-demo.example/news/pacific-grove",
+          "observed_on": "2026-07-30",
+          "excerpt": "New ready-meal facility expected to open next year."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "B_补证据",
+      "annotation_reason": "只有扩产新闻，尚未确认设备类别和采购时间",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Peakline AI Marketing Studio",
+      "domain": "peakline-ai.example",
+      "country": "United States",
+      "buyer_type": "AI company",
+      "product_fit": "AI marketing service",
+      "score": 75,
+      "grade": "C",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "adjacent product category (+10)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size is present but weaker (+5)"
+      ],
+      "hard_gates_failed": [
+        "excluded business type"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_request",
+          "source_type": "official_site",
+          "url": "https://peakline-ai.example/partners",
+          "observed_on": "2026-08-01",
+          "excerpt": "AI marketing studio seeking content technology partners."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "association",
+          "url": "https://martech-demo.example/members/peakline",
+          "observed_on": "2026-07-17",
+          "excerpt": "Member profile describes marketing automation services."
+        }
+      ],
+      "next_action": "archive or suppress; do not contact",
+      "human_label": "C_排除",
+      "annotation_reason": "属于AI营销服务商，不是包装设备买家",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Westbridge Import Network",
+      "domain": "westbridge-import.example",
+      "country": "United States",
+      "buyer_type": "equipment distributor",
+      "product_fit": "packaging equipment",
+      "score": 70,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches packaging/food-processing equipment focus (+25)",
+        "intent signals contribute +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "evidence is not cross-checked across two source types",
+        "fewer than two distinct intent signals",
+        "no current evidence within 90 days"
+      ],
+      "evidence": [
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://industrial-directory-demo.example/westbridge",
+          "observed_on": "2025-10-20",
+          "excerpt": "Directory profile lists general machinery imports."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "C_信息不足",
+      "annotation_reason": "只有目录收录，没有公司官网或近期需求证据",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Andes Harvest Cooperative",
+      "domain": "andes-harvest.example",
+      "country": "Chile",
+      "buyer_type": "food manufacturer",
+      "product_fit": "food-processing equipment",
+      "score": 63,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "adjacent product category (+10)",
+        "intent signals contribute +10",
+        "freshest evidence contributes +8",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible equipment buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "evidence is not cross-checked across two source types",
+        "fewer than two distinct intent signals"
+      ],
+      "evidence": [
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://latin-foodtech-demo.example/exhibitors/andes-harvest",
+          "observed_on": "2026-06-18",
+          "excerpt": "Producer profile mentions export-oriented food processing."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "B_补第二信号",
+      "annotation_reason": "展会记录真实感较强，但没有近期扩产或供应商征集",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    }
+  ]
+}
