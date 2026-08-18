@@ -23,6 +23,12 @@ deployment_target: GitHub Pages
 
 机器可读版本见 `project_manifest.json`；人类阅读时可直接从“项目目标”“HTML演示操作”和“当前行业假设”开始。
 
+## 在线访问
+
+- GitHub Pages：<https://xiayulajiao.github.io/>
+- GitHub 源码：<https://github.com/xiayulajiao/neigouhoutai.github.io>
+- 交互页面：<https://xiayulajiao.github.io/sales-intel-demo.html>
+
 这是一个本地、可复现的测试版本，验证第一阶段的核心流程：
 
 `证据记录 → 公司去重 → 需求信号评分 → 证据置信度 → 合规硬门槛 → A/B/C分级 → 人工复核队列`
