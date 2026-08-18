@@ -1,0 +1,12 @@
+[
+  {"id":"WT-6535-TWILL","title":"WorkTex 6535 斜纹工装面料产品卡","type":"核心产品","tags":["65/35涤棉","2/1斜纹","240gsm演示","工装"],"approved_for_external_use":true,"content":"主推产品：65/35 polyester-cotton 2/1 twill workwear fabric。演示规格为约240gsm、150cm门幅；真实报价前必须核对成分、克重公差、门幅、颜色和后整理。"},
+  {"id":"WT-6535-POPLIN","title":"WorkTex 6535 平纹府绸辅产品卡","type":"辅助产品","tags":["65/35涤棉","平纹","衬衫","轻工装"],"approved_for_external_use":true,"content":"辅产品：65/35 polyester-cotton poplin，用于衬衫、轻工装和制服内搭场景。演示资料只用于初筛，不承诺具体克重、色牢度或现货。"},
+  {"id":"WT-QA-01","title":"WorkTex 6535 质量与测试包","type":"质量资料","tags":["缩水率","色牢度","起球","REACH"],"approved_for_external_use":false,"content":"标准质量包包括成分、克重、门幅、缩水率、色牢度、起球、甲醛/偶氮和客户要求的第三方测试。不得在未取得报告前承诺通过任何认证。"},
+  {"id":"WT-SAMPLE-01","title":"样品与大货确认SOP","type":"交付流程","tags":["A4样","1米样","lab dip","批色"],"approved_for_external_use":true,"content":"先确认终端用途和规格，再寄A4样或1米样；颜色需走lab dip/色卡确认；大货前锁定批色、包装、卷长和验货标准。样品通过不等于大货自动合格。"},
+  {"id":"WT-CHANNEL-01","title":"工装面料目标客户画像","type":"销售策略","tags":["工作服品牌","制服工厂","面料经销商"],"approved_for_external_use":true,"content":"优先客户：工作服品牌、制服/校服工厂、工业洗涤服务商、工装面料进口商和区域经销商。资格问题围绕终端用途、年度用量、规格、样品节奏和现有供应商展开。"},
+  {"id":"WT-QUOTE-01","title":"WorkTex 报价字段与审批规则","type":"商务规则","tags":["MOQ","FOB","CIF","每米价","交期"],"approved_for_external_use":true,"content":"报价必须列明产品代码、规格、颜色、MOQ、每米/公斤价格口径、FOB/CIF目的港、样品费、包装、交期、付款条件和有效期。所有数字均需销售与供应链审批。"},
+  {"id":"WT-EU-01","title":"欧盟工装面料联系与合规规则","type":"地区规则","tags":["欧盟","REACH","可追溯","企业邮箱"],"approved_for_external_use":false,"content":"优先通过企业邮箱、官网供应商入口或授权展会渠道联系；环保和化学品声明必须有对应资料。实名个人邮箱和未经授权的案例需要人工拦截。"},
+  {"id":"WT-MENA-01","title":"中东工作服渠道资格规则","type":"地区规则","tags":["中东","工作服","经销商","付款"],"approved_for_external_use":false,"content":"首轮确认终端行业、阻燃/耐磨等真实要求、年度量、库存模式、目的港和付款方式。不得承诺独家代理、现货或未经审核的阻燃性能。"},
+  {"id":"WT-CASE-01","title":"WorkTex 演示合作案例模板","type":"案例模板","tags":["工装","样品","大货"],"approved_for_external_use":false,"content":"案例模板：从客户规格澄清、候选面料筛选、样品确认到大货跟进。只能替换为已授权的真实客户、数量、周期和结果。"},
+  {"id":"WT-GUARDRAILS-01","title":"WorkTex 禁止承诺清单","type":"安全规则","tags":["人工审批","不能自动发送","不能自动报价"],"approved_for_external_use":true,"content":"禁止编造成分、克重、门幅、色牢度、认证、阻燃性能、价格、MOQ、交期、付款条件、客户案例和独家政策。外发内容必须保留证据与审批记录。"}
+]
