@@ -29,6 +29,8 @@ deployment_target: GitHub Pages
 - GitHub 源码：<https://github.com/xiayulajiao/neigouhoutai.github.io>
 - 交互页面：<https://xiayulajiao.github.io/sales-intel-demo.html>
 
+如果访问首页出现 404，请在 GitHub 仓库中打开 `Settings → Pages`，将 `Build and deployment` 设置为 `Deploy from a branch`，分支选择 `main`，目录选择 `/ (root)`，保存后等待一两分钟。该仓库已加入 `.nojekyll`，用于保持静态 HTML 原样发布。
+
 这是一个本地、可复现的测试版本，验证第一阶段的核心流程：
 
 `证据记录 → 公司去重 → 需求信号评分 → 证据置信度 → 合规硬门槛 → A/B/C分级 → 人工复核队列`
