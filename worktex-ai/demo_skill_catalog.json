@@ -1,0 +1,10 @@
+[
+  {"id":"lead-verification","name":"线索核验","stage":"情报","input":["公司域名","公开证据","联系路径"],"output":["公司真实性","证据时效","联系门槛","缺口"],"permission":"自动执行","human_gate":false},
+  {"id":"worktex-buyer-fit","name":"WorkTex买家匹配","stage":"情报","input":["买家类型","终端用途","采购信号"],"output":["6535斜纹/府绸匹配度","资格问题","推荐产品"],"permission":"自动建议","human_gate":false},
+  {"id":"spec-normalizer","name":"规格标准化","stage":"产品","input":["客户自然语言需求","面料产品卡"],"output":["成分","组织","克重","门幅","后整理","待确认字段"],"permission":"自动执行","human_gate":false},
+  {"id":"sample-qualification","name":"样品资格","stage":"产品","input":["用途","样品标准","测试要求"],"output":["A4/1米样建议","lab dip问题","测试资料清单"],"permission":"自动建议","human_gate":true},
+  {"id":"worktex-sales-brief","name":"商务简报","stage":"商务","input":["证据","WorkTex知识库","地区规则"],"output":["客户背景","购买理由","首轮资格问题","风险提示"],"permission":"自动执行","human_gate":false},
+  {"id":"worktex-quote-draft","name":"报价草稿","stage":"商务","input":["产品代码","规格","MOQ","目的港","贸易条款"],"output":["报价字段框架","缺失字段","审批清单"],"permission":"只生成草稿","human_gate":true},
+  {"id":"reply-triage","name":"客户回复分类","stage":"跟进","input":["客户邮件/表单回复","当前CRM阶段"],"output":["兴趣/询价/样品/拒绝/转交","下一步动作","响应时限"],"permission":"自动建议","human_gate":true},
+  {"id":"crm-followup","name":"CRM跟进卡","stage":"跟进","input":["线索情报","回复分类","报价状态"],"output":["阶段","负责人","待补字段","下次跟进日期"],"permission":"人工确认后写入","human_gate":true}
+]
