@@ -1,0 +1,563 @@
+{
+  "run_date": "2026-08-17",
+  "data_mode": "synthetic_demo",
+  "focus": "packaging and food-processing equipment exporters / overseas buyers",
+  "automation_policy": "research and scoring only; no crawling or outbound sending",
+  "input_records": 8,
+  "unique_records": 8,
+  "duplicates_merged": 0,
+  "duplicate_notes": [],
+  "grade_counts": {
+    "A": 4,
+    "B": 3,
+    "C": 1
+  },
+  "annotation_counts": {
+    "A_人工确认": 4,
+    "HOLD_联系合规": 1,
+    "HOLD_技术与样品": 1,
+    "C_禁止联系": 1,
+    "C_排除": 1
+  },
+  "model_human_confusion": {
+    "model_A__human_A": 3,
+    "model_B__human_HOLD": 1,
+    "model_A__human_HOLD": 1,
+    "model_B__human_A": 1,
+    "model_B__human_C": 1,
+    "model_C__human_C": 1
+  },
+  "annotation_mismatches": [
+    {
+      "company": "Nordic Workwear Supply",
+      "model_grade": "B",
+      "human_label": "HOLD_联系合规",
+      "reason": "商业信号较强，但当前只有实名个人邮箱，需人工确认联系依据"
+    },
+    {
+      "company": "Sakura Uniform Trading",
+      "model_grade": "A",
+      "human_label": "HOLD_技术与样品",
+      "reason": "制服新品开发和质量岗位指向明确，但测试与样品文件需先由团队确认"
+    },
+    {
+      "company": "Milan Uniform Sourcing",
+      "model_grade": "B",
+      "human_label": "A_人工确认",
+      "reason": "秋冬制服采购日历与亚洲涤棉供应商招聘指向明确，先确认采购主体和付款条款"
+    },
+    {
+      "company": "Rhein Uniform Collective",
+      "model_grade": "B",
+      "human_label": "C_禁止联系",
+      "reason": "官网明确不接受未经请求的商业营销，保留为负面训练样本"
+    }
+  ],
+  "contact_review_queue": [
+    {
+      "company": "Andes Uniform Distribution",
+      "domain": "andes-uniform.example",
+      "country": "Chile",
+      "buyer_type": "workwear fabric distributor",
+      "product_fit": "65/35 poly-cotton 2/1 twill",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_registration",
+          "source_type": "official_site",
+          "url": "https://andes-uniform.example/supplier-registration",
+          "observed_on": "2026-08-02",
+          "excerpt": "Seeking durable uniform fabrics with composition and test documents."
+        },
+        {
+          "signal": "distributor_gap",
+          "source_type": "association",
+          "url": "https://workwear-demo.example/members/andes-uniform",
+          "observed_on": "2026-07-13",
+          "excerpt": "Current range has limited stable 65/35 poly-cotton twill qualities."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "供应商登记与65/35斜纹经销商品类缺口同时出现，适合先发技术资料索引",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Atlas Uniform Fabrics",
+      "domain": "atlas-uniform.example",
+      "country": "Turkey",
+      "buyer_type": "workwear fabric importer",
+      "product_fit": "65/35 poly-cotton 2/1 twill",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_registration",
+          "source_type": "official_site",
+          "url": "https://atlas-uniform.example/supplier-program",
+          "observed_on": "2026-08-12",
+          "excerpt": "Opening supplier registration for uniform and workwear fabrics with composition and test documents."
+        },
+        {
+          "signal": "assortment_gap",
+          "source_type": "trade_fair",
+          "url": "https://workwear-demo.example/exhibitors/atlas",
+          "observed_on": "2026-07-22",
+          "excerpt": "Current portfolio has limited stable 65/35 poly-cotton twill qualities."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "供应商准入与65/35斜纹品类缺口两个近期信号，适合生成WorkTex产品简报",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Sakura Uniform Trading",
+      "domain": "sakura-uniform.example",
+      "country": "Japan",
+      "buyer_type": "uniform buyer",
+      "product_fit": "65/35 poly-cotton workwear fabrics",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "new_collection",
+          "source_type": "official_site",
+          "url": "https://sakura-uniform.example/news/spring-development",
+          "observed_on": "2026-07-27",
+          "excerpt": "Spring uniform collection is validating 65/35 workwear fabrics and small-lot samples."
+        },
+        {
+          "signal": "quality_hiring",
+          "source_type": "job_posting",
+          "url": "https://sakura-uniform.example/careers/quality",
+          "observed_on": "2026-08-05",
+          "excerpt": "Quality engineer role covers fabric testing and supplier improvement."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "HOLD_技术与样品",
+      "annotation_reason": "制服新品开发和质量岗位指向明确，但测试与样品文件需先由团队确认",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Coastal Uniform Distribution",
+      "domain": "coastal-uniform.example",
+      "country": "United Arab Emirates",
+      "buyer_type": "workwear fabric wholesaler",
+      "product_fit": "65/35 twill and poplin",
+      "score": 85,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "adjacent product category (+10)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "warehouse_expansion",
+          "source_type": "official_site",
+          "url": "https://coastal-uniform.example/news/warehouse",
+          "observed_on": "2026-08-07",
+          "excerpt": "Second uniform-fabric warehouse is entering sourcing planning."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://coastal-uniform.example/jobs/sourcing-manager",
+          "observed_on": "2026-07-21",
+          "excerpt": "Hiring a sourcing manager for Asian poly-cotton suppliers."
+        },
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://coastal-uniform.example/supplier-inquiry",
+          "observed_on": "2026-08-09",
+          "excerpt": "Supplier inquiry open for uniform and industrial-laundry fabrics."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "仓配扩张、采购岗位和制服面料供应商咨询三个信号，适合生成渠道资格简报",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    }
+  ],
+  "results": [
+    {
+      "company": "Andes Uniform Distribution",
+      "domain": "andes-uniform.example",
+      "country": "Chile",
+      "buyer_type": "workwear fabric distributor",
+      "product_fit": "65/35 poly-cotton 2/1 twill",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_registration",
+          "source_type": "official_site",
+          "url": "https://andes-uniform.example/supplier-registration",
+          "observed_on": "2026-08-02",
+          "excerpt": "Seeking durable uniform fabrics with composition and test documents."
+        },
+        {
+          "signal": "distributor_gap",
+          "source_type": "association",
+          "url": "https://workwear-demo.example/members/andes-uniform",
+          "observed_on": "2026-07-13",
+          "excerpt": "Current range has limited stable 65/35 poly-cotton twill qualities."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "供应商登记与65/35斜纹经销商品类缺口同时出现，适合先发技术资料索引",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Atlas Uniform Fabrics",
+      "domain": "atlas-uniform.example",
+      "country": "Turkey",
+      "buyer_type": "workwear fabric importer",
+      "product_fit": "65/35 poly-cotton 2/1 twill",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "supplier_registration",
+          "source_type": "official_site",
+          "url": "https://atlas-uniform.example/supplier-program",
+          "observed_on": "2026-08-12",
+          "excerpt": "Opening supplier registration for uniform and workwear fabrics with composition and test documents."
+        },
+        {
+          "signal": "assortment_gap",
+          "source_type": "trade_fair",
+          "url": "https://workwear-demo.example/exhibitors/atlas",
+          "observed_on": "2026-07-22",
+          "excerpt": "Current portfolio has limited stable 65/35 poly-cotton twill qualities."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "供应商准入与65/35斜纹品类缺口两个近期信号，适合生成WorkTex产品简报",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Nordic Workwear Supply",
+      "domain": "nordic-workwear.example",
+      "country": "Sweden",
+      "buyer_type": "workwear brand",
+      "product_fit": "65/35 poly-cotton twill",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "contact route is not an approved corporate/authorized route"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://nordic-workwear.example/suppliers",
+          "observed_on": "2026-08-08",
+          "excerpt": "Supplier inquiry open for traceable workwear fabrics."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "trade_fair",
+          "url": "https://workwear-demo.example/exhibitors/nordic",
+          "observed_on": "2026-07-18",
+          "excerpt": "Brand is expanding uniform and industrial-laundry sourcing."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "HOLD_联系合规",
+      "annotation_reason": "商业信号较强，但当前只有实名个人邮箱，需人工确认联系依据",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Sakura Uniform Trading",
+      "domain": "sakura-uniform.example",
+      "country": "Japan",
+      "buyer_type": "uniform buyer",
+      "product_fit": "65/35 poly-cotton workwear fabrics",
+      "score": 100,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "new_collection",
+          "source_type": "official_site",
+          "url": "https://sakura-uniform.example/news/spring-development",
+          "observed_on": "2026-07-27",
+          "excerpt": "Spring uniform collection is validating 65/35 workwear fabrics and small-lot samples."
+        },
+        {
+          "signal": "quality_hiring",
+          "source_type": "job_posting",
+          "url": "https://sakura-uniform.example/careers/quality",
+          "observed_on": "2026-08-05",
+          "excerpt": "Quality engineer role covers fabric testing and supplier improvement."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "HOLD_技术与样品",
+      "annotation_reason": "制服新品开发和质量岗位指向明确，但测试与样品文件需先由团队确认",
+      "annotation_reviewer": "demo_reviewer_03",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Coastal Uniform Distribution",
+      "domain": "coastal-uniform.example",
+      "country": "United Arab Emirates",
+      "buyer_type": "workwear fabric wholesaler",
+      "product_fit": "65/35 twill and poplin",
+      "score": 85,
+      "grade": "A",
+      "evidence_confidence": "high",
+      "verified": true,
+      "eligible_for_contact_review": true,
+      "reasons": [
+        "adjacent product category (+10)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [],
+      "evidence": [
+        {
+          "signal": "warehouse_expansion",
+          "source_type": "official_site",
+          "url": "https://coastal-uniform.example/news/warehouse",
+          "observed_on": "2026-08-07",
+          "excerpt": "Second uniform-fabric warehouse is entering sourcing planning."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://coastal-uniform.example/jobs/sourcing-manager",
+          "observed_on": "2026-07-21",
+          "excerpt": "Hiring a sourcing manager for Asian poly-cotton suppliers."
+        },
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://coastal-uniform.example/supplier-inquiry",
+          "observed_on": "2026-08-09",
+          "excerpt": "Supplier inquiry open for uniform and industrial-laundry fabrics."
+        }
+      ],
+      "next_action": "human review, then prepare a one-to-one outreach brief",
+      "human_label": "A_人工确认",
+      "annotation_reason": "仓配扩张、采购岗位和制服面料供应商咨询三个信号，适合生成渠道资格简报",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Milan Uniform Sourcing",
+      "domain": "milan-uniform.example",
+      "country": "Italy",
+      "buyer_type": "uniform sourcing agent",
+      "product_fit": "65/35 poly-cotton workwear fabrics",
+      "score": 80,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": false,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "company could not be verified from an authoritative source"
+      ],
+      "evidence": [
+        {
+          "signal": "seasonal_sourcing",
+          "source_type": "procurement_calendar",
+          "url": "https://milan-uniform.example/calendar",
+          "observed_on": "2026-08-03",
+          "excerpt": "AW uniform fabric supplier screening starts this month."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "job_posting",
+          "url": "https://milan-uniform.example/careers/sourcing",
+          "observed_on": "2026-07-29",
+          "excerpt": "Hiring a sourcing specialist for Asian poly-cotton suppliers and sampling."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "A_人工确认",
+      "annotation_reason": "秋冬制服采购日历与亚洲涤棉供应商招聘指向明确，先确认采购主体和付款条款",
+      "annotation_reviewer": "demo_reviewer_01",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Rhein Uniform Collective",
+      "domain": "rhein-uniform.example",
+      "country": "Germany",
+      "buyer_type": "workwear brand",
+      "product_fit": "65/35 poly-cotton twill",
+      "score": 70,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "evidence is not cross-checked across two source types",
+        "fewer than two distinct intent signals",
+        "no recognized intent signal",
+        "suppressed or opted out"
+      ],
+      "evidence": [
+        {
+          "signal": "do_not_market",
+          "source_type": "official_site",
+          "url": "https://rhein-uniform.example/vendor-policy",
+          "observed_on": "2026-08-11",
+          "excerpt": "Unsolicited commercial marketing emails are not accepted."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "C_禁止联系",
+      "annotation_reason": "官网明确不接受未经请求的商业营销，保留为负面训练样本",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    },
+    {
+      "company": "Peakline AI Marketing Studio",
+      "domain": "peakline-ai.example",
+      "country": "United States",
+      "buyer_type": "non-target service provider",
+      "product_fit": "not applicable",
+      "score": 45,
+      "grade": "C",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "adjacent product category (+10)",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size is present but weaker (+5)"
+      ],
+      "hard_gates_failed": [
+        "evidence is not cross-checked across two source types",
+        "fewer than two distinct intent signals",
+        "no recognized intent signal",
+        "suppressed or opted out"
+      ],
+      "evidence": [
+        {
+          "signal": "wrong_buyer_type",
+          "source_type": "official_site",
+          "url": "https://peakline-ai.example/about",
+          "observed_on": "2026-08-01",
+          "excerpt": "Marketing automation service provider, not a textile buyer."
+        }
+      ],
+      "next_action": "archive or suppress; do not contact",
+      "human_label": "C_排除",
+      "annotation_reason": "非纺织面料买家，作为排除规则演示样本",
+      "annotation_reviewer": "demo_reviewer_02",
+      "synthetic_demo": true
+    }
+  ]
+}

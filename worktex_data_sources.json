@@ -1,0 +1,7 @@
+[
+  {"id":"owned_web_forms","name":"WorkTex官网表单","category":"自有数据","collection_mode":"Webhook/后台导出","compliance":"高","setup":"低","signal":"样品申请、询价、供应商合作、资料下载","recommended_order":1,"notes":"最先接入；线索来源、同意记录和字段归属清晰。"},
+  {"id":"owned_site_pages","name":"WorkTex官网公开页面","category":"自有数据","collection_mode":"定时读取已配置页面","compliance":"高","setup":"低","signal":"产品页访问、下载、供应商入口、内容主题","recommended_order":2,"notes":"只采集自有站点和公开页面，保留页面版本与采集时间。"},
+  {"id":"linkedin_company_authorized","name":"WorkTex LinkedIn企业主页","category":"授权平台","collection_mode":"官方API/授权导出","compliance":"中高","setup":"中","signal":"企业内容互动、表单、帖子主题和公开企业线索","recommended_order":3,"notes":"只接入自己的企业主页或明确授权的数据，不抓取个人主页，不自动加好友或发私信。"},
+  {"id":"trade_fair_directory","name":"海外展会与行业目录","category":"公开目录","collection_mode":"允许的公开页面/人工导入","compliance":"中","setup":"低","signal":"展商、供应商招募、采购周期、品类方向","recommended_order":4,"notes":"逐站检查使用条款、robots、商业使用权限和更新频率。"},
+  {"id":"manual_csv","name":"人工CSV导入","category":"人工补充","collection_mode":"模板上传","compliance":"高","setup":"低","signal":"转介绍、客户会议、展会名片、合作伙伴名单","recommended_order":5,"notes":"作为无法接入API时的合规兜底方式，保留提交人和来源证明。"}
+]

@@ -1,0 +1,21 @@
+{
+  "version": "0.4-worktex-layered",
+  "description": "老板后台自动处理看板使用的演示流程定义。真实系统可将每一步替换为队列任务和持久化运行日志。",
+  "stages": [
+    {"id":"lead-intake","label":"收到线索","module":"线索处理","default_status":"completed","plain":"把来源、日期和公司信息整理成统一格式。"},
+    {"id":"company-verification","label":"核验公司","module":"线索处理","default_status":"completed","plain":"确认公司是否真实、资料是否够新、是否有可用联系路径。"},
+    {"id":"buyer-fit","label":"判断是否适合","module":"线索处理","default_status":"completed","plain":"判断是不是 WorkTex 的目标买家，以及适合哪款面料。"},
+    {"id":"signal-analysis","label":"分析采购信号","module":"线索处理","default_status":"completed","plain":"整理供应商招募、采购计划、展会和扩张等信号。"},
+    {"id":"product-match","label":"匹配产品","module":"商务准备","default_status":"completed","plain":"根据用途和买家类型推荐 6535 斜纹或府绸。"},
+    {"id":"contact-draft","label":"生成联系草稿","module":"商务准备","default_status":"waiting_human","plain":"生成销售可编辑的联系内容，不自动发送。"},
+    {"id":"quote-draft","label":"整理报价字段","module":"商务准备","default_status":"waiting_human","plain":"整理规格、MOQ、FOB/CIF 和交期字段，不自动填写价格。"},
+    {"id":"crm-followup","label":"写入跟进任务","module":"客户跟进","default_status":"ready","plain":"把负责人、缺口和下一步动作写成跟进记录。"}
+  ],
+  "status_labels": {
+    "completed":"已完成",
+    "ready":"已生成",
+    "waiting_human":"等待人工确认",
+    "blocked":"已拦截",
+    "needs_more":"需要补资料"
+  }
+}

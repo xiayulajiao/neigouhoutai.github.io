@@ -1,0 +1,43 @@
+{
+  "version": "0.4-worktex-layered",
+  "description": "WorkTex 分层 Skill 演示架构：总控 Skill 负责编排，子 Skill 负责单一动作，安全规则贯穿所有阶段。",
+  "orchestrator": {
+    "id": "worktex-sales-intelligence-orchestrator",
+    "name": "WorkTex 销售情报总控",
+    "role": "接收线索、安排处理顺序、汇总结果、控制人工审批，不直接替代所有子 Skill。",
+    "allowed_stages": ["线索处理", "商务准备", "客户跟进"],
+    "stop_conditions": ["公司无法核验", "进入禁止联系名单", "缺少必要证据", "涉及价格/认证/交期/付款承诺", "需要人工审批"],
+    "output": ["处理状态", "处理记录", "证据列表", "缺口", "下一步动作", "人工审批状态"]
+  },
+  "modules": [
+    {
+      "id": "lead-intelligence",
+      "name": "线索处理模块",
+      "purpose": "把外部线索变成可判断的公司和买家信息。",
+      "skills": ["lead-intake", "company-verification", "buyer-fit", "signal-analysis"]
+    },
+    {
+      "id": "commercial-prep",
+      "name": "商务准备模块",
+      "purpose": "把客户情报转成产品建议、联系草稿和报价字段。",
+      "skills": ["product-match", "spec-normalizer", "sample-qualification", "contact-draft", "quote-draft"]
+    },
+    {
+      "id": "followup",
+      "name": "客户跟进模块",
+      "purpose": "处理客户回复并沉淀下一步销售动作。",
+      "skills": ["reply-triage", "meeting-prep", "crm-followup"]
+    },
+    {
+      "id": "guardrails",
+      "name": "安全与审批模块",
+      "purpose": "检查隐私、证据和商业承诺风险，必要时阻断自动动作。",
+      "skills": ["evidence-policy", "contact-compliance", "commercial-approval"]
+    }
+  ],
+  "skill_contract": {
+    "required_input": ["lead_id", "context", "evidence", "knowledge_refs"],
+    "required_output": ["status", "confidence", "result", "missing_fields", "next_action", "requires_human"],
+    "rules": ["单个 Skill 只负责一个明确动作", "不直接修改其他 Skill 的结果", "外部发送和报价必须经过人工审批", "每次运行必须保留可回放日志"]
+  }
+}

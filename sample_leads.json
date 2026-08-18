@@ -1,0 +1,120 @@
+[
+  {
+    "company": "Northstar Food Systems",
+    "domain": "https://www.northstar-food.example",
+    "country": "United States",
+    "buyer_type": "food manufacturer",
+    "product_fit": "packaging and food processing equipment",
+    "size": "medium",
+    "contact_mode": "corporate_email",
+    "contact_review_status": "manual_review",
+    "suppressed": false,
+    "evidence": [
+      {"signal": "plant_expansion", "source_type": "official_site", "url": "https://www.northstar-food.example/news/plant-expansion", "observed_on": "2026-07-20", "excerpt": "New production line planned for Q4 2026."},
+      {"signal": "relevant_hiring", "source_type": "job_posting", "url": "https://www.northstar-food.example/careers/packaging-engineer", "observed_on": "2026-07-28", "excerpt": "Hiring a packaging engineer to support line automation."},
+      {"signal": "trade_fair", "source_type": "trade_fair", "url": "https://www.pack-expo.example/exhibitors/northstar", "observed_on": "2026-06-10", "excerpt": "Exhibitor profile lists filling and secondary packaging expansion."}
+    ]
+  },
+  {
+    "company": "Meridian Process Traders",
+    "domain": "meridian-process.example",
+    "country": "United Kingdom",
+    "buyer_type": "equipment distributor",
+    "product_fit": "packaging equipment",
+    "size": "medium",
+    "contact_mode": "corporate_email",
+    "contact_review_status": "approved_source",
+    "suppressed": false,
+    "evidence": [
+      {"signal": "distributor_gap", "source_type": "official_site", "url": "https://meridian-process.example/brands", "observed_on": "2026-07-01", "excerpt": "Portfolio lists case packing but no automated pouch filling supplier."}
+    ]
+  },
+  {
+    "company": "Old Mill Bottling",
+    "domain": "old-mill.example",
+    "country": "United States",
+    "buyer_type": "beverage manufacturer",
+    "product_fit": "food processing equipment",
+    "size": "medium",
+    "contact_mode": "official_form",
+    "contact_review_status": "manual_review",
+    "suppressed": false,
+    "evidence": [
+      {"signal": "relevant_hiring", "source_type": "job_posting", "url": "https://old-mill.example/jobs/maintenance", "observed_on": "2025-12-15", "excerpt": "Maintenance role for existing bottling line."},
+      {"signal": "trade_fair", "source_type": "trade_fair", "url": "https://www.beverage-show.example/old-mill", "observed_on": "2025-11-20", "excerpt": "Exhibitor listing from last year."}
+    ]
+  },
+  {
+    "company": "BrightPath AI Marketing",
+    "domain": "brightpath-ai.example",
+    "country": "United States",
+    "buyer_type": "AI company",
+    "product_fit": "AI marketing service",
+    "size": "medium",
+    "contact_mode": "corporate_email",
+    "contact_review_status": "manual_review",
+    "suppressed": false,
+    "evidence": [
+      {"signal": "supplier_request", "source_type": "official_site", "url": "https://brightpath-ai.example/partners", "observed_on": "2026-08-01", "excerpt": "Seeking technology partners for marketing automation."},
+      {"signal": "trade_fair", "source_type": "association", "url": "https://www.ai-association.example/members/brightpath", "observed_on": "2026-07-20", "excerpt": "Member profile describes AI marketing services."}
+    ]
+  },
+  {
+    "company": "Harborline Machinery",
+    "domain": "harborline-machinery.example",
+    "country": "Singapore",
+    "buyer_type": "equipment distributor",
+    "product_fit": "packaging equipment",
+    "size": "large",
+    "contact_mode": "named_personal_email",
+    "contact_review_status": "unknown",
+    "suppressed": false,
+    "evidence": [
+      {"signal": "supplier_request", "source_type": "official_site", "url": "https://harborline-machinery.example/supplier-registration", "observed_on": "2026-08-05", "excerpt": "Supplier registration open for packaging machinery."},
+      {"signal": "distributor_gap", "source_type": "trade_fair", "url": "https://www.packaging-asia.example/exhibitors/harborline", "observed_on": "2026-07-14", "excerpt": "Distributor profile lists filling and labelling equipment."}
+    ]
+  },
+  {
+    "company": "Cedar Valley Foods",
+    "domain": "cedar-valley.example",
+    "country": "United States",
+    "buyer_type": "food manufacturer",
+    "product_fit": "packaging equipment",
+    "size": "medium",
+    "contact_mode": "corporate_email",
+    "contact_review_status": "manual_review",
+    "suppressed": false,
+    "evidence": [
+      {"signal": "plant_expansion", "source_type": "news", "url": "https://industry-news.example/cedar-valley-expansion", "observed_on": "2026-07-30", "excerpt": "Company announces a new facility."}
+    ]
+  },
+  {
+    "company": "NoDomain Import Services",
+    "domain": "",
+    "country": "United States",
+    "buyer_type": "equipment distributor",
+    "product_fit": "packaging equipment",
+    "size": "medium",
+    "contact_mode": "official_form",
+    "contact_review_status": "manual_review",
+    "suppressed": false,
+    "evidence": [
+      {"signal": "supplier_request", "source_type": "trade_fair", "url": "https://www.trade-show.example/no-domain", "observed_on": "2026-08-02", "excerpt": "Exhibitor directory entry requests new suppliers."},
+      {"signal": "distributor_gap", "source_type": "association", "url": "https://www.association.example/no-domain", "observed_on": "2026-08-03", "excerpt": "Association listing describes packaging distribution."}
+    ]
+  },
+  {
+    "company": "Northstar Food Systems - duplicate listing",
+    "domain": "northstar-food.example/",
+    "country": "United States",
+    "buyer_type": "food manufacturer",
+    "product_fit": "packaging and food processing equipment",
+    "size": "medium",
+    "contact_mode": "corporate_email",
+    "contact_review_status": "manual_review",
+    "suppressed": false,
+    "evidence": [
+      {"signal": "new_product_line", "source_type": "official_site", "url": "https://www.northstar-food.example/products/new-line", "observed_on": "2026-07-25", "excerpt": "New ready-meal product line announced."}
+    ]
+  }
+]

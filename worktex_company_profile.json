@@ -1,0 +1,23 @@
+{
+  "synthetic_demo": true,
+  "company_name": "WorkTex Materials Co.",
+  "positioning": "只深耕两款65/35涤棉制服与工装面料的B2B出口商",
+  "products": [
+    {
+      "code": "WT-6535-TWILL",
+      "role": "主推",
+      "description": "65/35 polyester-cotton 2/1 twill workwear fabric",
+      "demo_spec": {"weight_gsm": "约240（演示）", "width_cm": "约150（演示）", "use_cases": ["工作服", "制服", "工业洗涤"]}
+    },
+    {
+      "code": "WT-6535-POPLIN",
+      "role": "辅产品",
+      "description": "65/35 polyester-cotton poplin for lighter uniforms",
+      "demo_spec": {"weight_gsm": "待产品卡确认", "width_cm": "待产品卡确认", "use_cases": ["衬衫", "轻工装", "制服内搭"]}
+    }
+  ],
+  "target_buyers": ["工作服品牌", "制服/校服工厂", "工业洗涤服务商", "工装面料进口商", "区域经销商"],
+  "qualification_questions": ["终端用途", "目标成分/克重/门幅", "颜色与lab dip", "年度用量", "样品与测试", "目的港与贸易条款"],
+  "commercial_process": ["公开信号核验", "买家匹配", "规格标准化", "样品资格", "人工审批草稿", "报价字段确认", "CRM跟进"],
+  "hard_boundaries": ["不自动发送", "不自动给价", "不承诺未审核的认证或阻燃性能", "不编造客户案例", "不猜测个人邮箱"]
+}

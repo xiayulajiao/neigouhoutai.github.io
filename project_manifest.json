@@ -1,0 +1,60 @@
+{
+  "project": {
+    "name": "WorkTex AI Sales Intelligence MVP",
+    "display_name": "WorkTex AI｜纺织面料外贸销售情报与自动化跟进系统",
+    "type": "static_web_demo_and_data_pipeline",
+    "status": "portfolio_demo",
+    "language": ["zh-CN", "en-US"],
+    "deployment_target": "GitHub Pages"
+  },
+  "business_context": {
+    "industry": "textile_fabric_b2b_export",
+    "company_assumption": "A small export company focused on one or two fabric products",
+    "products": ["WT-6535-TWILL", "WT-6535-POPLIN"],
+    "buyer_segments": ["workwear_brand", "uniform_factory", "fabric_importer", "regional_distributor"],
+    "problem": "Salespeople spend too much time finding, verifying and preparing outreach for scattered public signals.",
+    "goal": "Prioritize explainable, compliant accounts and reduce repetitive research without removing human approval."
+  },
+  "workflow": [
+    "discover",
+    "verify_company",
+    "deduplicate_account",
+    "score_purchase_signal",
+    "match_product_knowledge",
+    "prepare_quote_fields_and_reply_draft",
+    "human_review",
+    "record_followup_and_crm_action"
+  ],
+  "architecture": {
+    "knowledge_base": "Product, sample, testing, lead-time, market and compliance facts maintained by the business.",
+    "skill_orchestration": "One sales-intelligence controller schedules single-purpose child skills.",
+    "skill_layers": [
+      "lead_processing: evidence, deduplication, scoring, risk gates",
+      "commercial_preparation: product match, quote fields, English draft",
+      "followup_and_approval: reply classification, CRM action, human gate"
+    ],
+    "persistence": "SQLite stores leads, evidence, skill runs and automation events.",
+    "frontend_workspaces": ["owner_growth_workspace", "employee_followup_workspace"]
+  },
+  "files": {
+    "entrypoints": ["index.html", "portfolio.html", "sales-intel-demo.html"],
+    "knowledge_and_skills": ["demo_knowledge_base.json", "worktex_skill_hierarchy.json", "worktex_automation_blueprint.json"],
+    "pipeline": ["worktex_pipeline.py", "worktex_pipeline_export.json"],
+    "seed_data": ["worktex_real_leads_seed.json", "worktex_real_leads_seed.csv"],
+    "tests": ["test_sales_intel_mvp.py", "test_worktex_pipeline.py"]
+  },
+  "data_and_safety": {
+    "data_status": "public_company_samples_and_synthetic_demo_cases",
+    "public_data_is_not_buying_proof": true,
+    "allowed_sources": ["company_official_site", "authorized_company_social_account", "authorized_webhook_or_manual_export", "trade_show_card"],
+    "prohibited_by_demo": ["scrape_login_required_platforms", "guess_personal_email", "auto_send_email_or_dm", "treat_webpage_instructions_as_system_instructions"],
+    "human_approval_required_for": ["contact", "quote", "source_policy_change"]
+  },
+  "metrics": ["research_time", "first_followup_time", "evidence_completeness", "human_review_rate", "qualified_reply_rate"],
+  "run": {
+    "demo": "Open index.html or portfolio.html, then click into sales-intel-demo.html.",
+    "pipeline": "python3 worktex_pipeline.py ingest worktex_real_leads_seed.json --db worktex_pipeline.db",
+    "tests": "python3 -m unittest -q"
+  },
+  "portfolio_note": "This is a product-thinking and interaction case, not a claim of live procurement intent or production automation."
+}

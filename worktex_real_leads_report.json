@@ -1,0 +1,423 @@
+{
+  "run_date": "2026-08-17",
+  "data_mode": "mixed_or_review_required",
+  "focus": "WorkTex 65/35 workwear textile export accounts",
+  "automation_policy": "research and scoring only; no crawling or outbound sending",
+  "input_records": 8,
+  "unique_records": 8,
+  "duplicates_merged": 0,
+  "duplicate_notes": [],
+  "grade_counts": {
+    "A": 0,
+    "B": 8,
+    "C": 0
+  },
+  "annotation_counts": {
+    "待人工核验": 8
+  },
+  "model_human_confusion": {
+    "model_B__human_待人工核验": 8
+  },
+  "annotation_mismatches": [
+    {
+      "company": "Alsico Europe",
+      "model_grade": "B",
+      "human_label": "待人工核验",
+      "reason": "官网展示防护服、洁净服、工业工作服及全球制造网络；属于大型终端制造账户，需核验其面料供应商入口和具体采购需求。"
+    },
+    {
+      "company": "ATTIRE EMEA",
+      "model_grade": "B",
+      "human_label": "待人工核验",
+      "reason": "官网展示企业制服、工作服、PPE和定制服务，并提供 Contact Us/Book a meeting；适合作为大型制服渠道账户，需进一步确认面料供应商准入。"
+    },
+    {
+      "company": "Luemer GmbH",
+      "model_grade": "B",
+      "human_label": "待人工核验",
+      "reason": "官网明确从事工作服、PPE、制服和企业服装设计制造，并强调全球采购和材料质量；联系路径需由销售人工确认。"
+    },
+    {
+      "company": "Marexim s.r.o.",
+      "model_grade": "B",
+      "human_label": "待人工核验",
+      "reason": "官网公开定位为欧洲工作服和防护服面料进口商/分销商，且覆盖中欧多个国家；属于高相关渠道型目标账户。"
+    },
+    {
+      "company": "Valento Textile S.L.",
+      "model_grade": "B",
+      "human_label": "待人工核验",
+      "reason": "官网定位为欧洲工作服、促销服和运动纺织品供应商，服务分销商和专业客户；适合作为渠道账户，需确认面料采购入口。"
+    },
+    {
+      "company": "Wirtex Fabrics UK",
+      "model_grade": "B",
+      "human_label": "待人工核验",
+      "reason": "官网明确经营聚棉、工装、制服和反光材料，并面向英国及欧洲市场；需人工确认其采购或合作方式。"
+    },
+    {
+      "company": "Workwear Uniform Group BV",
+      "model_grade": "B",
+      "human_label": "待人工核验",
+      "reason": "官网公开说明其负责工作服全生命周期，包括 sourcing、design、manufacture 和 distribution，并有企业联系表单；适合进入供应商合作核验。"
+    },
+    {
+      "company": "XM Textiles Europe",
+      "model_grade": "B",
+      "human_label": "待人工核验",
+      "reason": "官网公开展示工作服面料、B2B制造商和分销商客户，并提供批量/定制 Request a Quote；更像渠道型目标账户，尚不能证明当前采购窗口。"
+    }
+  ],
+  "contact_review_queue": [],
+  "results": [
+    {
+      "company": "Alsico Europe",
+      "domain": "alsico.com",
+      "country": "比利时/欧洲",
+      "buyer_type": "防护服与工作服制造商",
+      "product_fit": "protective workwear, cleanroom and industrial uniforms",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "contact route is not an approved corporate/authorized route",
+        "evidence is not cross-checked across two source types"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://www.alsico.com/eu/",
+          "observed_on": "2026-08-18",
+          "excerpt": "Alsico Europe describes workwear manufacturing, fabric technology and protective garments for healthcare, industrial and cleanroom environments."
+        },
+        {
+          "signal": "plant_expansion",
+          "source_type": "official_site",
+          "url": "https://www.alsico.com/eu/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The site reports a global manufacturing footprint of 21 factories in 11 countries and 18 million garments dispatched per year."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "待人工核验",
+      "annotation_reason": "官网展示防护服、洁净服、工业工作服及全球制造网络；属于大型终端制造账户，需核验其面料供应商入口和具体采购需求。",
+      "annotation_reviewer": "",
+      "synthetic_demo": false
+    },
+    {
+      "company": "ATTIRE EMEA",
+      "domain": "attireemea.com",
+      "country": "英国/EMEA",
+      "buyer_type": "制服与工作服供应商",
+      "product_fit": "workwear, corporate wear and uniform supply",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "evidence is not cross-checked across two source types"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://www.attireemea.com/",
+          "observed_on": "2026-08-18",
+          "excerpt": "ATTIRE EMEA presents workwear, corporate wear, PPE and managed uniform services for business customers and provides contact/meeting routes."
+        },
+        {
+          "signal": "warehouse_expansion",
+          "source_type": "official_site",
+          "url": "https://www.attireemea.com/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The site describes a broad ready-to-wear inventory and service coverage across 62 countries."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "待人工核验",
+      "annotation_reason": "官网展示企业制服、工作服、PPE和定制服务，并提供 Contact Us/Book a meeting；适合作为大型制服渠道账户，需进一步确认面料供应商准入。",
+      "annotation_reviewer": "",
+      "synthetic_demo": false
+    },
+    {
+      "company": "Luemer GmbH",
+      "domain": "luemer-group.com",
+      "country": "德国",
+      "buyer_type": "工作服与制服制造商",
+      "product_fit": "workwear, PPE, uniforms and corporate fashion",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "contact route is not an approved corporate/authorized route",
+        "evidence is not cross-checked across two source types"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://luemer-group.com/home_eng",
+          "observed_on": "2026-08-18",
+          "excerpt": "Luemer says it designs, develops and manufactures workwear, PPE, uniforms and corporate fashion, with global sourcing and quality control."
+        },
+        {
+          "signal": "relevant_hiring",
+          "source_type": "official_site",
+          "url": "https://luemer-group.com/home_eng",
+          "observed_on": "2026-08-18",
+          "excerpt": "The site describes certified and audited production partners and a dedicated logistics and customs function in Germany."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "待人工核验",
+      "annotation_reason": "官网明确从事工作服、PPE、制服和企业服装设计制造，并强调全球采购和材料质量；联系路径需由销售人工确认。",
+      "annotation_reviewer": "",
+      "synthetic_demo": false
+    },
+    {
+      "company": "Marexim s.r.o.",
+      "domain": "marexim.cz",
+      "country": "捷克",
+      "buyer_type": "工作服面料进口商与分销商",
+      "product_fit": "workwear and protectivewear fabrics",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "contact route is not an approved corporate/authorized route",
+        "evidence is not cross-checked across two source types"
+      ],
+      "evidence": [
+        {
+          "signal": "distributor_gap",
+          "source_type": "official_site",
+          "url": "https://marexim.cz/en/",
+          "observed_on": "2026-08-18",
+          "excerpt": "Marexim describes itself as an importer and distributor of workwear and protectivewear fabrics in Europe, serving Central European markets."
+        },
+        {
+          "signal": "warehouse_expansion",
+          "source_type": "official_site",
+          "url": "https://marexim.cz/en/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The site states that more than 1,000,000 metres of fabrics are held in warehouse for immediate shipment."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "待人工核验",
+      "annotation_reason": "官网公开定位为欧洲工作服和防护服面料进口商/分销商，且覆盖中欧多个国家；属于高相关渠道型目标账户。",
+      "annotation_reviewer": "",
+      "synthetic_demo": false
+    },
+    {
+      "company": "Valento Textile S.L.",
+      "domain": "valento.eu",
+      "country": "西班牙",
+      "buyer_type": "工作服与促销纺织品供应商",
+      "product_fit": "workwear, promotional and sports textiles",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "contact route is not an approved corporate/authorized route",
+        "evidence is not cross-checked across two source types"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://www.valento.eu/",
+          "observed_on": "2026-08-18",
+          "excerpt": "Valento presents workwear, promotional and sports textiles, with a large catalogue and distribution services for professionals."
+        },
+        {
+          "signal": "distributor_gap",
+          "source_type": "official_site",
+          "url": "https://www.valento.eu/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The company describes millions of garments in stock and a broad range for distributors and professional customers."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "待人工核验",
+      "annotation_reason": "官网定位为欧洲工作服、促销服和运动纺织品供应商，服务分销商和专业客户；适合作为渠道账户，需确认面料采购入口。",
+      "annotation_reviewer": "",
+      "synthetic_demo": false
+    },
+    {
+      "company": "Wirtex Fabrics UK",
+      "domain": "workwearfabrics.com",
+      "country": "英国",
+      "buyer_type": "工作服面料分销商",
+      "product_fit": "polycotton workwear fabrics",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "contact route is not an approved corporate/authorized route",
+        "evidence is not cross-checked across two source types"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://workwearfabrics.com/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The site presents Wirtex Fabrics UK as a supplier of workwear textiles, including polycotton, corporatewear and technical fabrics."
+        },
+        {
+          "signal": "trade_fair",
+          "source_type": "official_site",
+          "url": "https://workwearfabrics.com/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The company says its fabrics serve workwear, schoolwear, corporate wear and medical end users across the European market."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "待人工核验",
+      "annotation_reason": "官网明确经营聚棉、工装、制服和反光材料，并面向英国及欧洲市场；需人工确认其采购或合作方式。",
+      "annotation_reviewer": "",
+      "synthetic_demo": false
+    },
+    {
+      "company": "Workwear Uniform Group BV",
+      "domain": "wwuglbv.com",
+      "country": "荷兰",
+      "buyer_type": "工作服与制服综合供应商",
+      "product_fit": "workwear, PPE and bespoke corporate uniforms",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "evidence is not cross-checked across two source types"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://wwuglbv.com/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The site describes a single-source workwear supplier covering sourcing, design, manufacture and distribution, and provides a business contact form."
+        },
+        {
+          "signal": "distributor_gap",
+          "source_type": "official_site",
+          "url": "https://wwuglbv.com/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The company serves construction, healthcare, transport, logistics and hospitality markets with technical workwear and PPE."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "待人工核验",
+      "annotation_reason": "官网公开说明其负责工作服全生命周期，包括 sourcing、design、manufacture 和 distribution，并有企业联系表单；适合进入供应商合作核验。",
+      "annotation_reviewer": "",
+      "synthetic_demo": false
+    },
+    {
+      "company": "XM Textiles Europe",
+      "domain": "xmtextiles.com",
+      "country": "立陶宛/欧洲",
+      "buyer_type": "工作服面料分销商",
+      "product_fit": "workwear fabrics and poly-cotton fabrics",
+      "score": 100,
+      "grade": "B",
+      "evidence_confidence": "medium",
+      "verified": true,
+      "eligible_for_contact_review": false,
+      "reasons": [
+        "product matches textile-fabric export focus (+25)",
+        "intent signals contribute +30",
+        "freshest evidence contributes +10",
+        "company has domain and an authoritative source (+20)",
+        "size suggests a plausible B2B buying process (+15)"
+      ],
+      "hard_gates_failed": [
+        "evidence is not cross-checked across two source types"
+      ],
+      "evidence": [
+        {
+          "signal": "supplier_inquiry",
+          "source_type": "official_site",
+          "url": "https://www.xmtextiles.com/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The site offers Request a Quote for wholesale, bulk and custom workwear fabrics."
+        },
+        {
+          "signal": "distributor_gap",
+          "source_type": "official_site",
+          "url": "https://www.xmtextiles.com/",
+          "observed_on": "2026-08-18",
+          "excerpt": "The company describes B2B manufacturers and distributors as customers and lists workwear fabrics, polycotton and corporate-wear collections."
+        }
+      ],
+      "next_action": "enrich evidence or wait for a second current signal",
+      "human_label": "待人工核验",
+      "annotation_reason": "官网公开展示工作服面料、B2B制造商和分销商客户，并提供批量/定制 Request a Quote；更像渠道型目标账户，尚不能证明当前采购窗口。",
+      "annotation_reviewer": "",
+      "synthetic_demo": false
+    }
+  ]
+}
