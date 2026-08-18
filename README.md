@@ -25,9 +25,9 @@ deployment_target: GitHub Pages
 
 ## 在线访问
 
-- GitHub Pages：<https://xiayulajiao.github.io/>
+- GitHub Pages：<https://xiayulajiao.github.io/neigouhoutai.github.io/>
 - GitHub 源码：<https://github.com/xiayulajiao/neigouhoutai.github.io>
-- 交互页面：<https://xiayulajiao.github.io/sales-intel-demo.html>
+- 交互页面：<https://xiayulajiao.github.io/neigouhoutai.github.io/sales-intel-demo.html>
 
 如果访问首页出现 404，请在 GitHub 仓库中打开 `Settings → Pages`，将 `Build and deployment` 设置为 `Deploy from a branch`，分支选择 `main`，目录选择 `/ (root)`，保存后等待一两分钟。该仓库已加入 `.nojekyll`，用于保持静态 HTML 原样发布。
 
